@@ -1,4 +1,4 @@
 os: linux
-script: make all
+script: make clean test
 sudo: required
-install: sudo apt-get -y update && sudo apt-get -y install check
+install: make dep
