@@ -151,48 +151,9 @@ START_TEST(test_2d_triangle)
     coord_2d_t a;
     coord_2d_t b;
     coord_2d_t c;
-    coord_2d_t exp;
-    coord_2d_t mid;
     a.x = b.x = c.y = 0;
     a.y = b.y = c.y = 0;	
-    mid = coord_2d_area_triangle(&a, &b, &c);
-    ck_assert(coord_2d_eq(&mid, &exp));
-
-    a.x = 0;
-    a.y = 0;
-    b.x = 3;
-    b.y = 0;
-    coord_2d_midpoint(&mid, &a, &b);
-    exp.x = 1.5;
-    exp.y = 0;
-    ck_assert(coord_2d_eq(&mid, &exp));
-
-    a.x = 0;
-    a.y = 0;
-    b.x = 0;
-    b.y = 3;
-    coord_2d_midpoint(&mid, &a, &b);
-    exp.x = 0;
-    exp.y = 1.5;
-    ck_assert(coord_2d_eq(&mid, &exp));
-
-    a.x = 0;
-    a.y = 0;
-    b.x = 3;
-    b.y = 3;
-    coord_2d_midpoint(&mid, &a, &b);
-    exp.x = 1.5;
-    exp.y = 1.5;
-    ck_assert(coord_2d_eq(&mid, &exp));
-
-    a.x = 1;
-    a.y = 2;
-    b.x = 3;
-    b.y = 4;
-    coord_2d_midpoint(&mid, &a, &b);
-    exp.x = 2;
-    exp.y = 3;
-    ck_assert(coord_2d_eq(&mid, &exp));
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0);
 
 }
 END_TEST
